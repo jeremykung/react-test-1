@@ -1,17 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+import "./index.css";
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const BookList = () => {
+  return (
+    <section className="booklist">
+      <Book />
+      <Book />
+      <Book />
+    </section>
+  );
+};
+
+const Book = () => {
+  const title =
+    "The Model Thinker: What You Need to Know to Make Data Work for You";
+  const author = "Scott E. Page";
+  return (
+    <article className="book">
+      <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1538512393i/39088592.jpg" />
+      <h2>{title}</h2>
+      <p>{author}</p>
+    </article>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<BookList />);
